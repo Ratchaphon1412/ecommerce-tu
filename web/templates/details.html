@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <title>Details</title>
+</head>
+
+<body>
+    <nav class="fixed w-full z-20 top-0 left-0 transition-colors duration-300"
+        :class="[scrolled ? 'background-solid-nav' : 'bg-transparent']">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center">
+                <!-- <img src="OldiesLogo.ico" class="h-8 mr-3" alt="Flowbite Logo" /> -->
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-black">Lorem</span>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                    <li>
+                        <a v-scroll-to="'#home'"
+                            class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-black md:p-0 text-black md:hover:text-blue-700"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a v-scroll-to="'#problem'"
+                            class="block py-2 pl-3 pr-4 text-black rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Problem</a>
+                    </li>
+                    <li>
+                        <a v-scroll-to="'#solution'"
+                            class="block py-2 pl-3 pr-4 text-black rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Solution</a>
+                    </li>
+                    <!-- <li>
+    <a
+      v-scroll-to="'#target'"
+      class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+      >Target</a
+    >
+  </li> -->
+                    <li class="">
+                        <button v-scroll-to="'#contact'" type="button"
+                            class="text-white bg-[#2D3648] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">
+                            Contact
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="pt-12 mt-8 pb-24 bg-blueGray-100 rounded-b-10xl overflow-hidden">
+        <div class="container px-4 mx-auto">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full px-4">
+                    <ul class="flex flex-wrap items-center mb-16">
+                        <li class="mr-6">
+                            <a class="flex items-center text-sm font-medium text-gray-400 hover:text-gray-500" href="#">
+                                <span>Home</span>
+                                <svg class="ml-6" width="4" height="7" viewbox="0 0 4 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.150291 0.898704C-0.0500975 0.692525 -0.0500975 0.359292 0.150291 0.154634C0.35068 -0.0507836 0.674443 -0.0523053 0.874831 0.154634L3.7386 3.12787C3.93899 3.33329 3.93899 3.66576 3.7386 3.8727L0.874832 6.84594C0.675191 7.05135 0.35068 7.05135 0.150292 6.84594C-0.0500972 6.63976 -0.0500972 6.30652 0.150292 6.10187L2.49888 3.49914L0.150291 0.898704Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="flex items-center text-sm font-medium text-gray-400 hover:text-gray-500" href="#">
+                                <span>Store</span>
+                                <svg class="ml-6" width="4" height="7" viewbox="0 0 4 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.150291 0.898704C-0.0500975 0.692525 -0.0500975 0.359292 0.150291 0.154634C0.35068 -0.0507836 0.674443 -0.0523053 0.874831 0.154634L3.7386 3.12787C3.93899 3.33329 3.93899 3.66576 3.7386 3.8727L0.874832 6.84594C0.675191 7.05135 0.35068 7.05135 0.150292 6.84594C-0.0500972 6.63976 -0.0500972 6.30652 0.150292 6.10187L2.49888 3.49914L0.150291 0.898704Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li><a class="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#">Apple iPhone
+                                12 PRO</a></li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
+                    <div
+                        class="flex -mx-4 flex-wrap items-center justify-between lg:justify-start lg:items-start xl:items-center">
+
+                        <div class="w-full sm:w-9/12 px-4">
+                            <img class="mb-5 w-full h-full "
+                                src="https://images.unsplash.com/photo-1505156868547-9b49f4df4e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=832&q=80"
+                                alt="">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4">
+                    <div class="max-w-md mb-6">
+                        <span class="text-xs text-gray-400 tracking-wider">APPLE #3299803</span>
+                        <h2 class="mt-6 mb-4 text-2xl md:text-2xl lg:text-3xl font-heading font-medium">Apple iPhone 12
+                            Pro (128GB) - Silver</h2>
+                        <p class="flex items-center mb-6">
+                            <span class="mr-2 text-sm text-blue-500 font-medium">$</span>
+                            <span class="text-3xl text-blue-500 font-medium">44.90</span>
+                        </p>
+                        <p class="text-lg text-gray-400">The nulla commodo, commodo eros a lor, tristique lectus. Lorem
+                            sad 128 GB silver.</p>
+                    </div>
+                    <div class="flex mb-6 items-center">
+                        <div class="inline-flex mr-4">
+                            <button class="mr-1">
+                                <svg width="20" height="20" viewbox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
+                                        fill="#C1C9D3"></path>
+                                </svg>
+                            </button>
+                            <button class="mr-1">
+                                <svg width="20" height="20" viewbox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
+                                        fill="#C1C9D3"></path>
+                                </svg>
+                            </button>
+                            <button class="mr-1">
+                                <svg width="20" height="20" viewbox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
+                                        fill="#C1C9D3"></path>
+                                </svg>
+                            </button>
+                            <button class="mr-1">
+                                <svg width="20" height="20" viewbox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
+                                        fill="#C1C9D3"></path>
+                                </svg>
+                            </button>
+                            <button>
+                                <svg width="20" height="20" viewbox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
+                                        fill="#C1C9D3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="text-md text-gray-400">4.59</span>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="mb-3 font-heading font-medium">
+                            <span>Color:</span>
+                            <span class="text-gray-400">Silver</span>
+                        </h4>
+                        <button class="inline-flex items-center justify-center p-1 rounded-full border border-gray-300">
+                            <div class="w-6 h-6 rounded-full bg-white"></div>
+                        </button>
+                        <button
+                            class="inline-flex items-center justify-center p-1 rounded-full border border-transparent">
+                            <div class="w-6 h-6 rounded-full bg-orange-800"></div>
+                        </button>
+                        <button
+                            class="inline-flex items-center justify-center p-1 rounded-full border border-transparent">
+                            <div class="w-6 h-6 rounded-full bg-blue-900"></div>
+                        </button>
+                        <button
+                            class="inline-flex items-center justify-center p-1 rounded-full border border-transparent">
+                            <div class="w-6 h-6 rounded-full bg-yellow-500"></div>
+                        </button>
+                    </div>
+                    <div class="mb-10">
+                        <h4 class="mb-3 font-heading font-medium">Qty:</h4>
+                        <input
+                            class="w-24 px-3 py-2 text-center bg-white border-2 border-blue-500 outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
+                            type="text" placeholder="1">
+                    </div>
+                    <div class="flex flex-wrap -mx-2 mb-12">
+                        <div class="w-full md:w-2/3 px-2 mb-2 md:mb-0"><a
+                                class="block py-4 px-2 leading-8 font-heading font-medium tracking-tighter text-xl text-white text-center bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-600 rounded-xl"
+                                href="#">Add to bag</a></div>
+                        <div class="w-full md:w-1/3 px-2">
+                            <a class="flex w-full py-4 px-2 items-center justify-center leading-8 font-heading font-medium tracking-tighter text-xl text-center bg-white focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 hover:bg-opacity-60 rounded-xl"
+                                href="#">
+                                <span class="mr-2">Wishlist</span>
+                                <svg width="23" height="22" viewbox="0 0 23 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.3235 20.1324L2.52488 10.8515C1.75232 10.0706 1.24237 9.06367 1.06728 7.97339C0.8922 6.88311 1.06086 5.76477 1.54936 4.7768V4.7768C1.91837 4.03089 2.45739 3.3843 3.12201 2.89033C3.78663 2.39635 4.55781 2.06911 5.37203 1.93558C6.18626 1.80205 7.0202 1.86605 7.80517 2.1223C8.59013 2.37855 9.30364 2.81972 9.88691 3.40946L11.3235 4.86204L12.7601 3.40946C13.3434 2.81972 14.0569 2.37855 14.8419 2.1223C15.6269 1.86605 16.4608 1.80205 17.275 1.93558C18.0892 2.06911 18.8604 2.39635 19.525 2.89033C20.1897 3.3843 20.7287 4.03089 21.0977 4.7768V4.7768C21.5862 5.76477 21.7549 6.88311 21.5798 7.97339C21.4047 9.06367 20.8947 10.0706 20.1222 10.8515L11.3235 20.1324Z"
+                                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="mb-6 font-heading font-medium">More information</h4>
+                        <button
+                            class="flex w-full pl-6 lg:pl-12 pr-6 py-4 mb-4 justify-between items-center leading-7 rounded-2xl border-2 border-blueGray-200 hover:border-blueGray-300">
+                            <h3 class="text-lg font-heading font-medium">Shipping &amp; returns</h3>
+                            <span>
+                                <svg width="12" height="8" viewbox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.4594 0.289848C10.8128 -0.096616 11.3841 -0.096616 11.7349 0.289848C12.0871 0.676312 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880363 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.096616 1.53966 0.289848L6.00147 4.81927L10.4594 0.289848Z"
+                                        fill="black"></path>
+                                </svg>
+                            </span>
+                        </button>
+                        <button
+                            class="flex w-full pl-6 lg:pl-12 pr-6 py-4 justify-between items-center leading-7 rounded-2xl border-2 border-blueGray-200 hover:border-blueGray-300">
+                            <h3 class="text-lg font-heading font-medium">Product details</h3>
+                            <span>
+                                <svg width="12" height="8" viewbox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.4594 0.289848C10.8128 -0.096616 11.3841 -0.096616 11.7349 0.289848C12.0871 0.676312 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880363 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.096616 1.53966 0.289848L6.00147 4.81927L10.4594 0.289848Z"
+                                        fill="black"></path>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+
+
+        <footer class="bg-white dark:bg-gray-900">
+            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <a href="https://flowbite.com/" class="flex items-center">
+                            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
+                            <span
+                                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                Resources</h2>
+                            <ul class="text-gray-600 dark:text-gray-400 font-medium">
+                                <li class="mb-4">
+                                    <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                                </li>
+                                <li>
+                                    <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                                Follow us</h2>
+                            <ul class="text-gray-600 dark:text-gray-400 font-medium">
+                                <li class="mb-4">
+                                    <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                                </li>
+                                <li>
+                                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal
+                            </h2>
+                            <ul class="text-gray-600 dark:text-gray-400 font-medium">
+                                <li class="mb-4">
+                                    <a href="#" class="hover:underline">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                            href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights
+                        Reserved.
+                    </span>
+                    <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Facebook page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Instagram page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                            <span class="sr-only">Twitter page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">GitHub account</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Dribbble account</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </footer>
+</body>
+
+</html>
